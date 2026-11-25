@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Interactiva: El Primer Viaje de Cristóbal Colón - Colegio Montano</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        montanoBlue: '#1269A8',
+                        montanoYellow: '#F7D615',
+                        montanoGreen: '#54887D',
+                        montanoLightBlue: '#88B5C7',
+                        montanoOlive: '#A6B046',
+                        montanoBg: '#F2F5E9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F2F5E9;
+        }
+        .pizarra-border {
+            border: 4px solid #F7D615;
+        }
+        /* Custom scrollbar for clean UI */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F2F5E9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #88B5C7;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-gray-800 p-2 sm:p-6 flex flex-col justify-between">
+
+    <!-- Main Container styled like a Digital Whiteboard -->
+    <div id="whiteboard-container" class="w-full max-w-7xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col flex-grow pizarra-border relative">
+        
+        <!-- Top Header / Bar -->
+        <header class="bg-montanoBlue text-white p-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4 border-b-4 border-montanoYellow">
+            <div class="flex items-center space-x-4">
+                <!-- Institutional Logo -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyEop0yf6lZ7Jk9MILZxF1rBj4Oqs5esyhIQ&s" alt="Logo Colegio Montano" class="h-12 w-12 rounded-full object-cover bg-white p-1 border-2 border-montanoYellow shadow-md" onerror="this.src='https://placehold.co/100x100/1269A8/FFFFFF?text=CM'">
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-bold tracking-wide">Colegio Montano</h1>
+                    <p class="text-xs sm:text-sm text-montanoLightBlue font-medium">Guía de Aprendizaje Interactivo | Primero Básico</p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <span class="bg-montanoOlive text-white text-xs px-3 py-1.5 rounded-full font-bold uppercase tracking-wider shadow">Tema: El Primer Viaje de Cristóbal Colón</span>
+                <!-- Fullscreen Button -->
+                <button onclick="toggleFullScreen()" class="bg-montanoYellow text-gray-900 font-bold px-4 py-2 rounded-lg text-sm flex items-center gap-2 hover:bg-yellow-400 transition transform active:scale-95 shadow">
+                    <span>[ ⛶ Pantalla completa ]</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Horizontal Interactive Tabs Navigation -->
+        <nav class="bg-montanoGreen text-white flex flex-wrap justify-center md:justify-start px-4 gap-2 py-3 border-b border-montanoLightBlue shadow-inner">
+            <button onclick="switchTab('teoria')" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-montanoBlue text-white shadow" data-target="teoria">1. Explicación Teórica</button>
+            <button onclick="switchTab('ejemplos')" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition hover:bg-montanoGreen/80 text-white" data-target="ejemplos">2. Ejemplos Resueltos</button>
+            <button onclick="switchTab('ejercicios')" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition hover:bg-montanoGreen/80 text-white" data-target="ejercicios">3. Ejercicios Prácticos</button>
+            <button onclick="switchTab('reflexion')" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition hover:bg-montanoGreen/80 text-white" data-target="reflexion">4. Reflexión Crítica</button>
+            <button onclick="switchTab('evaluacion')" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition hover:bg-montanoGreen/80 text-white" data-target="evaluacion">5. Evaluación Formativa</button>
+        </nav>
+
+        <!-- Dynamic Content Canvas Area -->
+        <main class="p-4 sm:p-8 bg-montanoBg overflow-y-auto flex-grow">
+
+            <!-- TAB 1: TEORÍA -->
+            <section id="teoria" class="tab-content space-y-6">
+                <div class="bg-white rounded-xl p-6 shadow-md border-l-8 border-montanoBlue">
+                    <h2 class="text-2xl font-bold text-montanoBlue mb-4">El Contexto y la Ruta del Primer Viaje de Cristóbal Colón (1492)</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        A finales del siglo XV, las rutas comerciales tradicionales hacia el continente asiático (la India y China) en busca de especias y seda se encontraban bloqueadas por el Imperio Otomano. El navegante genovés <strong>Cristóbal Colón</strong> propuso una ruta alternativa y audaz: navegar hacia el oeste a través del Océano Atlántico para llegar a las Indias orientales, basándose en la premisa de que la Tierra era esférica.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                        <div class="bg-montanoLightBlue/20 p-4 rounded-lg border border-montanoLightBlue">
+                            <h3 class="font-bold text-montanoBlue text-lg mb-2">1. Los Reyes Católicos</h3>
+                            <p class="text-sm text-gray-600">Tras años de gestiones, Isabel de Castilla y Fernando de Aragón financiaron parcialmente la expedición firmando las Capitulaciones de Santa Fe en abril de 1492.</p>
+                        </div>
+                        <div class="bg-montanoLightBlue/20 p-4 rounded-lg border border-montanoLightBlue">
+                            <h3 class="font-bold text-montanoBlue text-lg mb-2">2. La Flota Expedicionaria</h3>
+                            <p class="text-sm text-gray-600">La expedición zarpó del Puerto de Palos de la Frontera (Huelva) el 3 de agosto de 1492 con tres naves: la <em>Santa María</em>, la <em>Pinta</em> y la <em>Niña</em>.</p>
+                        </div>
+                        <div class="bg-montanoLightBlue/20 p-4 rounded-lg border border-montanoLightBlue">
+                            <h3 class="font-bold text-montanoBlue text-lg mb-2">3. La Llegada a Guanahani</h3>
+                            <p class="text-sm text-gray-600">Tras semanas de incertidumbre y tensiones a bordo, el marinero Rodrigo de Triana avistó tierra el 12 de octubre de 1492, llegando a una isla caribeña llamada por los nativos Guanahani (San Salvador).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-md border-l-8 border-montanoOlive">
+                    <h3 class="text-xl font-bold text-montanoGreen mb-3">Cronología Clave del Viaje</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-montanoBlue text-white">
+                                    <th class="p-3 rounded-tl-lg">Fecha</th>
+                                    <th class="p-3">Hito Histórico</th>
+                                    <th class="p-3 rounded-tr-lg">Ubicación Clave</th>
+                                 </tr>
+                            </thead>
+                            <tbody class="text-sm divide-y divide-gray-200">
+                                <tr>
+                                    <td class="p-3 font-semibold text-montanoBlue">3 de agosto, 1492</td>
+                                    <td class="p-3">Zarpe oficial de las tres carabelas.</td>
+                                    <td class="p-3">Puerto de Palos, España.</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="p-3 font-semibold text-montanoBlue">6 de septiembre, 1492</td>
+                                    <td class="p-3">Salida definitiva hacia el oeste tras reparaciones.</td>
+                                    <td class="p-3">Islas Canarias.</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-semibold text-montanoBlue">12 de octubre, 1492</td>
+                                    <td class="p-3">Avistamiento de tierra y primer contacto.</td>
+                                    <td class="p-3">Isla Guanahani (Bahamas).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: EJEMPLOS RESUELTOS -->
+            <section id="ejemplos" class="tab-content hidden space-y-6">
+                <div class="bg-montanoBlue text-white p-4 rounded-xl shadow">
+                    <h2 class="text-2xl font-bold">Casos Históricos y Ejemplos Resueltos</h2>
+                    <p class="text-sm text-montanoLightBlue">Análisis detallado de situaciones del primer viaje clasificado por niveles de complejidad para estudiantes de Primero Básico.</p>
+                </div>
+
+                <!-- BÁSICO -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-montanoGreen border-b-2 border-montanoGreen pb-1">Nivel Básico (Geografía y Preparativos de la Expedición)</h3>
+                    
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 1 (Básico)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">La Elección de las Embarcaciones</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> Colón necesitaba naves resistentes y maniobrables para cruzar el Atlántico desconocido.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> Se utilizaron dos carabelas (la Pinta y la Niña) y una nao (la Santa María), cada una con características de velamen específicas para aprovechar los vientos alisios.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 2 (Básico)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">El Apoyo de la Corona Española</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> Portugal había rechazado el proyecto de Colón por considerarlo inviable.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> Los Reyes Católicos aceptaron financiarlo tras finalizar la Guerra de Granada, buscando expandir el catolicismo y competir comercialmente con Portugal.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 3 (Básico)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">Escala Técnica en las Islas Canarias</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> Las naves sufrieron daños iniciales en el timón antes de adentrarse en alta mar.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> La parada en La Gomera fue vital para reabastecer agua, alimentos frescos y reparar velámenes antes del gran salto oceánico.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 4 (Básico)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">Los Vientos Alisios</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> Navegar hacia el oeste requería un conocimiento preciso de la atmósfera marina.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> Colón eligió una latitud donde los vientos alisios soplaron constantemente a favor, facilitando el avance de las carabelas.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 5 (Básico)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">El Primer Contacto Lingüístico</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> Al llegar a Guanahani, españoles y nativos no compartían idioma.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> El intercambio inicial se basó en gestos y la entrega de objetos simbólicos sencillos (cuentas de vidrio y cascabeles por oro y frutas).</p>
+                    </div>
+                </div>
+
+                <!-- INTERMEDIO -->
+                <div class="space-y-4 pt-4">
+                    <h3 class="text-lg font-bold text-montanoGreen border-b-2 border-montanoGreen pb-1">Nivel Intermedio (Tensiones a Bordo y Navegación Astronómica)</h3>
+                    
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 6 (Intermedio)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">El Descontento de la Tripulación</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> Pasaban las semanas sin ver tierra firme, generando temores de no poder regresar.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> A finales de septiembre surgieron conatos de motín. Colón manejó la crisis combinando la persuasión con falsos cálculos de distancias recorridas en sus bitácoras.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 7 (Intermedio)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">La Variación Magnética de la Brújula</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> En alta mar, las agujas imantadas comenzaron a desviarse respecto a la Estrella Polar.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> Este fenómeno geofísico desconocido alarmó a los marineros, obligando a Colón a dar explicaciones científicas improvisadas para calmar el pánico.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 8 (Intermedio)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">Indicios Naturales de Tierra Firme</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> Días antes del avistamiento oficial, la tripulación notó señales en el océano.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> El avistamiento de aves migratorias volando hacia el suroeste y ramas flotando con vegetación fresca confirmó que la tierra estaba cerca.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 9 (Intermedio)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">El Rol de los Hermanos Pinzón</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> Martín Alonso Pinzón fue clave para reclutar marineros en Palos de la Frontera.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> La experiencia náutica de la familia Pinzón aportó estabilidad técnica y liderazgo operativo crucial en momentos de duda a bordo de la Pinta.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 10 (Intermedio)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">Exploración del Archipiélago Caribeño</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> Tras tocar tierra en Guanahani, Colón continuó navegando entre islas.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> Recorrió costas de Cuba y La Española (Hispaniola), buscando convencerse de que había llegado a las inmediaciones de Catay o Cipango (China y Japón).</p>
+                    </div>
+                </div>
+
+                <!-- AVANZADO -->
+                <div class="space-y-4 pt-4">
+                    <h3 class="text-lg font-bold text-montanoGreen border-b-2 border-montanoGreen pb-1">Nivel Avanzado (Consecuencias Geopolíticas y Choque Cultural)</h3>
+                    
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 11 (Avanzado)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">El Naufragio de la Santa María</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> En la Navidad de 1492, la nao capitana encalló en un arrecife en la costa de La Española.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> Con los restos de la madera, se construyó el Fuerte Navidad, el primer asentamiento español en América, dejando allí a un grupo de hombres.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 12 (Avanzado)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">El Cambio Geopolítico Mundial</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> El regreso de Colón a Europa en 1493 alteró el equilibrio entre potencias ibéricas.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> Obligó a renegociar tratados internacionales como el Tratado de Tordesillas para repartir las zonas de exploración entre España y Portugal.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 13 (Avanzado)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">El Choque de Cosmovisiones</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> El encuentro entre europeos y los pueblos originarios taínos supuso una ruptura histórica.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> Se iniciaron procesos complejos de intercambio biológico, ecológico y cultural global (conocido posteriormente como el intercambio colombino).</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 14 (Avanzado)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">La Evaluación de Distancias y Errores de Ptolomeo</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> Los cálculos geográficos de Colón sobre la circunferencia terrestre eran erróneos.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> Colón calculó mal el tamaño del globo terráqueo reduciendo el tamaño de Asia, lo que hizo que la existencia del continente americano fuera una sorpresa geográfica total.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejemplo 15 (Avanzado)</span>
+                        <h4 class="font-bold text-lg text-montanoBlue mt-2">La Sostenibilidad del Viaje de Retorno</h4>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Situación:</strong> Regresar a Europa contra vientos contrarios en 1493 requirió una nueva ruta oceánica.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Análisis Histórico:</strong> Colón implementó la técnica de la "volta" subiendo hacia el norte del Atlántico para capturar vientos del oeste de regreso hacia la Península Ibérica.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: EJERCICIOS PRÁCTICOS -->
+            <section id="ejercicios" class="tab-content hidden space-y-6">
+                <div class="bg-montanoBlue text-white p-4 rounded-xl shadow">
+                    <h2 class="text-2xl font-bold">Ejercicios Prácticos de Análisis Histórico</h2>
+                    <p class="text-sm text-montanoLightBlue">Resuelve los siguientes planteamientos basados en el primer viaje de Colón en tu cuaderno o bitácora sin respuestas incluidas.</p>
+                </div>
+
+                <!-- BÁSICO -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-montanoGreen border-b-2 border-montanoGreen pb-1">Ejercicios Nivel Básico</h3>
+                    
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 1</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Motivación comercial:</p>
+                        <p class="text-sm text-gray-700 mt-1">Explica en tus propias palabras por qué las naciones europeas necesitaban buscar una nueva ruta hacia la India a finales del siglo XV.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 2</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Identificación de la flota:</p>
+                        <p class="text-sm text-gray-700 mt-1">Menciona el nombre de las tres embarcaciones que participaron en la expedición de 1492 y señala cuál de ellas era la nao capitana.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 3</span>
+                        <p class="font-semibold text-montanoBlue mt-2">El punto de partida:</p>
+                        <p class="text-sm text-gray-700 mt-1">¿Desde qué puerto español zarpó la expedición y qué escala técnica realizaron antes de cruzar el Océano Atlántico?</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 4</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Fecha clave:</p>
+                        <p class="text-sm text-gray-700 mt-1">¿Qué suceso histórico ocurrió exactamente el 12 de octubre de 1492 y qué nombre tenía la isla a la que llegaron?</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 5</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Patrocinio real:</p>
+                        <p class="text-sm text-gray-700 mt-1">¿Qué reyes europeos financiaron el proyecto de Colón y bajo qué documento legal se establecieron los acuerdos?</p>
+                    </div>
+                </div>
+
+                <!-- INTERMEDIO -->
+                <div class="space-y-4 pt-4">
+                    <h3 class="text-lg font-bold text-montanoGreen border-b-2 border-montanoGreen pb-1">Ejercicios Nivel Intermedio</h3>
+                    
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 6</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Gestión de crisis a bordo:</p>
+                        <p class="text-sm text-gray-700 mt-1">Describe cómo manejó Cristóbal Colón el descontento y temor de su tripulación tras semanas de navegación sin avistar tierra.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 7</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Fenómenos naturales:</p>
+                        <p class="text-sm text-gray-700 mt-1">Explica qué fue la variación magnética de la brújula en alta mar y por qué causó tanta alarma entre los marineros experimentados.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 8</span>
+                        <p class="font-semibold text-montanoBlue mt-2">El rol de los expertos locales:</p>
+                        <p class="text-sm text-gray-700 mt-1">Analiza la importancia que tuvo la familia Pinzón en el éxito del reclutamiento y la navegación de las naves menores.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 9</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Señales de la naturaleza:</p>
+                        <p class="text-sm text-gray-700 mt-1">¿Qué indicios biológicos y meteorológicos observó la tripulación en los días previos al 12 de octubre que anticipaban la llegada a tierra?</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 10</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Geografía insular:</p>
+                        <p class="text-sm text-gray-700 mt-1">¿Qué territorios actuales del Caribe exploró Colón durante las semanas posteriores a su llegada al archipiélago?</p>
+                    </div>
+                </div>
+
+                <!-- AVANZADO -->
+                <div class="space-y-4 pt-4">
+                    <h3 class="text-lg font-bold text-montanoGreen border-b-2 border-montanoGreen pb-1">Ejercicios Nivel Avanzado</h3>
+                    
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 11</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Consecuencias del naufragio:</p>
+                        <p class="text-sm text-gray-700 mt-1">Examina las repercusiones estratégicas del encallamiento de la Santa María en Navidad y la fundación del Fuerte Navidad.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 12</span>
+                        <p class="font-semibold text-montanoBlue mt-2">El error de cálculo geográfico:</p>
+                        <p class="text-sm text-gray-700 mt-1">Discute por qué el error de estimación de la circunferencia terrestre por parte de Colón fue determinante para el descubrimiento de un nuevo continente.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 13</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Choque cultural inicial:</p>
+                        <p class="text-sm text-gray-700 mt-1">Redacta una reflexión crítica sobre las dinámicas de poder reflejadas en el intercambio de objetos entre los europeos y los nativos taínos.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 14</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Repercusión diplomática:</p>
+                        <p class="text-sm text-gray-700 mt-1">¿Cómo transformó el regreso de la expedición en 1493 las relaciones geopolíticas y los tratados de dominio marítimo entre España y Portugal?</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <span class="bg-montanoOlive text-white text-xs font-bold px-2.5 py-1 rounded">Ejercicio 15</span>
+                        <p class="font-semibold text-montanoBlue mt-2">Técnica de retorno oceánico:</p>
+                        <p class="text-sm text-gray-700 mt-1">Explica en qué consistió la maniobra de la "volta" en el viaje de regreso y por qué era indispensable para vencer los patrones de viento atlántico.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 4: REFLEXIÓN CRÍTICA -->
+            <section id="reflexion" class="tab-content hidden space-y-6">
+                <div class="bg-montanoBlue text-white p-4 rounded-xl shadow">
+                    <h2 class="text-2xl font-bold">Preguntas de Reflexión Crítica</h2>
+                    <p class="text-sm text-montanoLightBlue">Espacio para el análisis profundo, debate grupal y pensamiento histórico sobre las repercusiones de 1492.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow border-t-4 border-montanoBlue">
+                        <h3 class="font-bold text-montanoBlue text-lg mb-2">1. La perspectiva histórica de los acontecimientos</h3>
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            Tradicionalmente se ha denominado a este acontecimiento como el "descubrimiento de América". Desde la perspectiva actual, ¿por qué los historiadores modernos prefieren hablar de un "encuentro entre dos mundos" o "choque cultural"? Analiza ambos términos.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow border-t-4 border-montanoGreen">
+                        <h3 class="font-bold text-montanoGreen text-lg mb-2">2. El factor del riesgo y la incertidumbre</h3>
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            Los marineros de 1492 se adentraron en un océano desconocido enfrentando mitos sobre monstruos marinos y abismos. ¿Qué nos enseña esta actitud de valentía frente a los grandes retos e incertidumbres en la actualidad?
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow border-t-4 border-montanoOlive">
+                        <h3 class="font-bold text-montanoOlive text-lg mb-2">3. Las consecuencias globales a largo plazo</h3>
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            ¿De qué manera el primer viaje de Colón transformó la dieta, la economía y la geografía del planeta entero al conectar continentes que habían permanecido aislados durante milenios?
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow border-t-4 border-montanoLightBlue">
+                        <h3 class="font-bold text-montanoBlue text-lg mb-2">4. El rol del liderazgo en situaciones extremas</h3>
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            Desde tu rol como estudiante de Primero Básico, ¿qué lecciones sobre liderazgo, toma de decisiones bajo presión y manejo de equipos puedes extraer de la travesía de Colón y sus capitanes?
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 5: EVALUACIÓN FORMATIVA -->
+            <section id="evaluacion" class="tab-content hidden space-y-6">
+                <div class="bg-montanoBlue text-white p-4 rounded-xl shadow">
+                    <h2 class="text-2xl font-bold">Evaluación Formativa de Refuerzo</h2>
+                    <p class="text-sm text-montanoLightBlue">Responde las siguientes 5 preguntas de análisis para comprobar tu comprensión sobre los hechos históricos del primer viaje de Colón (sin respuestas incluidas).</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Pregunta 1 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <p class="font-semibold text-montanoBlue">Pregunta 1: ¿Por qué razón principal las potencias europeas buscaban una ruta marítima alternativa hacia Asia a finales del siglo XV?</p>
+                        <p class="text-xs text-gray-500 mt-2">Analiza y redacta tu respuesta argumentada con base en los contenidos de la guía.</p>
+                    </div>
+
+                    <!-- Pregunta 2 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <p class="font-semibold text-montanoBlue">Pregunta 2: Explica la importancia estratégica que tuvo la escala técnica en las Islas Canarias para el éxito de la travesía atlántica.</p>
+                        <p class="text-xs text-gray-500 mt-2">Analiza y redacta tu respuesta argumentada con base en los contenidos de la guía.</p>
+                    </div>
+
+                    <!-- Pregunta 3 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <p class="font-semibold text-montanoBlue">Pregunta 3: Describe brevemente cómo influyó el error de cálculo de Colón sobre el tamaño de la Tierra en el descubrimiento accidental del continente americano.</p>
+                        <p class="text-xs text-gray-500 mt-2">Analiza y redacta tu respuesta argumentada con base en los contenidos de la guía.</p>
+                    </div>
+
+                    <!-- Pregunta 4 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <p class="font-semibold text-montanoBlue">Pregunta 4: ¿De qué manera el naufragio de la Santa María en la Navidad de 1492 cambió los planes originales de la expedición en el Caribe?</p>
+                        <p class="text-xs text-gray-500 mt-2">Analiza y redacta tu respuesta argumentada con base en los contenidos de la guía.</p>
+                    </div>
+
+                    <!-- Pregunta 5 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-montanoLightBlue">
+                        <p class="font-semibold text-montanoBlue">Pregunta 5: ¿Qué relevancia tuvieron los hermanos Pinzón en el éxito logístico del reclutamiento y la capitanía de las naves menores?</p>
+                        <p class="text-xs text-gray-500 mt-2">Analiza y redacta tu respuesta argumentada con base en los contenidos de la guía.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer / Whiteboard Control Bar -->
+        <footer class="bg-white p-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-2">
+            <p>© 2026 Colegio Montano - Departamento de Innovación Educativa y Ciencias Sociales.</p>
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-3 h-3 rounded-full bg-montanoBlue"></span>
+                <span>Pizarra Interactiva v3.6 - Canvas LMS Ready</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Tab switching function
+        function switchTab(targetId) {
+            // Hide all tab contents
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.add('hidden'));
+
+            // Show target tab content
+            const activeTab = document.getElementById(targetId);
+            if (activeTab) {
+                activeTab.classList.remove('hidden');
+            }
+
+            // Update button styles
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-target') === targetId) {
+                    btn.className = "tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-montanoBlue text-white shadow";
+                } else {
+                    btn.className = "tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition hover:bg-montanoGreen/80 text-white bg-montanoGreen";
+                }
+            });
+
+            // Scroll whiteboard to top of content
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Fullscreen API implementation
+        function toggleFullScreen() {
+            const elem = document.getElementById('whiteboard-container');
+            if (!document.fullscreenElement) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen().catch(err => {
+                        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+                    });
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
